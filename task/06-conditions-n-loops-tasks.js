@@ -436,7 +436,24 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-  throw new Error('Not implemented');
+  const winCases = [
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],
+    [0, 4, 8], [2, 4, 6]
+  ];
+  const pos = [].concat(...Array.from(position, x => {
+    const r = x.toString().split(',');
+    return r.concat(Array(3-r.length).fill(''));
+  }));
+  for(let n = 0; n < winCases.length; ++n) {
+    const match = winCases[n].map(i => pos[i]).join('');
+    if(match === 'XXX') {
+      return 'X';
+    }
+    if(match === '000') {
+      return '0';
+    }
+  }
 }
 
 module.exports = {
