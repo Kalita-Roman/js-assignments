@@ -433,7 +433,16 @@ function getMatrixProduct(m1, m2) {
  *
  */
 function evaluateTicTacToePosition(position) {
-  throw new Error('Not implemented');
+  const winCases = [
+    [0, 1, 2]
+  ];
+  const pos = [].concat(...Array.from(position, x => x));
+  const takePos = y => pos[y];
+  const t = winCases.find(x => {
+    const p = x.map(takePos).join('');
+    console.log(p);
+  });
+  return true;
 }
 
 module.exports = {
