@@ -29,7 +29,10 @@
  *
  */
 function getFizzBuzz(num) {
-  throw new Error('Not implemented');
+  return num % 15 === 0 && 'FizzBuzz'
+    || num % 5 === 0 && 'Buzz' 
+    || num % 3 === 0 && 'Fizz' 
+    || num;
 }
 
 
@@ -82,7 +85,7 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a, b, c) {
-  throw new Error('Not implemented');
+  return (a + b > c) && (b + c > a) && (a + c > b);
 }
 
 
@@ -119,7 +122,7 @@ function isTriangle(a, b, c) {
  *
  */
 function doRectanglesOverlap(rect1, rect2) {
-  throw new Error('Not implemented');
+  return rect1.top + rect1.height >= rect2.top && rect1.left + rect1.width >= rect2.left;
 }
 
 
@@ -166,7 +169,7 @@ function isInsideCircle(circle, point) {
  *   'entente' => null
  */
 function findFirstSingleChar(str) {
-  throw new Error('Not implemented');
+  return str.split('').find(c => str.split(c).length <= 2);
 }
 
 
